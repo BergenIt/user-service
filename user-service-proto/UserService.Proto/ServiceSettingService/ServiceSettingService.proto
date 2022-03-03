@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option csharp_namespace = "UserService.Proto";
+
+package UserService;
+
+import "UserService.Proto/ServiceSettingService/ServiceSettingModel.proto";
+import "UserService.Proto/ServiceSettingService/ServiceSettingRequest.proto";
+
+//Сервис работы с настройками микросервиса (Ldap, Smtp)
+service ServiceSettingService {
+  rpc GetLdapServiceSetting (GetServiceSettingRequest) returns (ServiceSettings);
+  rpc GetSmtpServiceSetting (GetServiceSettingRequest) returns (ServiceSettings);
+  //Patch
+  rpc UpdateServiceSetting (ServiceSettings) returns (ServiceSettings);
+}

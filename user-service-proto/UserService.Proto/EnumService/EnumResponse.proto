@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option csharp_namespace = "UserService.Proto";
+
+package UserService;
+
+message EnumResponse {
+  repeated string Values = 1;
+}

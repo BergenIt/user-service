@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option csharp_namespace = "UserService.Proto";
+
+package UserService;
+
+import "DatabaseExtension.Proto/Filters/Filter.proto";
+
+message GetPermissionPageRequest {
+    DatabaseExtension.Filter Filter = 1;
+}
+
+message GetPermissionRequest {
+    string Id = 1;
+}
+
+message GetRolePermissionsRequest {
+    string RoleId = 1;
+}
+
+message GetSystemResourcesRequest {}

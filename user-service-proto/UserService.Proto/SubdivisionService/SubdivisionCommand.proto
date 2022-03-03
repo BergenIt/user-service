@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+option csharp_namespace = "UserService.Proto";
+
+package UserService;
+
+import "google/protobuf/wrappers.proto";
+
+message SubdivisionCreateCommand {
+    string Name = 1;
+    google.protobuf.StringValue Comment = 2;
+}
+
+message SubdivisionUpdateCommand {
+    // immutable field
+    string Id = 1;
+
+    string Name = 2;
+    google.protobuf.StringValue Comment = 3;
+}
+
+message SubdivisionsRemoveCommand {
+    repeated string RemoveSubdivisionsId = 1;
+}
+
+message SubdivisionsCreateCommand {
+    repeated SubdivisionCreateCommand CreateSubdivisionsList = 1;
+}
+
+message SubdivisionsUpdateCommand {
+    repeated SubdivisionUpdateCommand UpdateSubdivisionsList = 1;
+}

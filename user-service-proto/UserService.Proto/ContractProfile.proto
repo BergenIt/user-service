@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+option csharp_namespace = "UserService.Proto";
+
+package UserService;
+
+import "google/protobuf/wrappers.proto";
+
+message ContractProfiles {
+    repeated ContractProfile ContractProfileList = 1;
+}
+
+message ContractProfilePage {
+    repeated ContractProfile ContractProfileList = 1;
+
+    int32 CountItems = 2;
+}
+
+//Профиль контракта уведомления
+message ContractProfile
+{
+ 	google.protobuf.StringValue Id = 1;
+	google.protobuf.StringValue Name = 2;
+	google.protobuf.StringValue Comment = 3;
+	google.protobuf.StringValue NotifyEventType = 4;
+	repeated ContractSettingLine ContractSettingLines = 5;
+}
+
+//Строка в контракте уведомления
+message ContractSettingLine
+{
+    // if null\empty - create new setting line
+	google.protobuf.StringValue Id = 1;
+
+	google.protobuf.StringValue UserProppertyName = 2;
+	google.protobuf.StringValue UserTemplate = 3;
+	google.protobuf.StringValue ContractProfileId = 4;
+	google.protobuf.BoolValue Enable = 5;
+
+	int32 LineNumber = 6;
+
+	repeated ContractSettingPropperty ContractPropperties = 7;
+}
+
+//Свойство, подставляемое в строку
+message ContractSettingPropperty
+{
+    // if null\empty - create new prop
+	google.protobuf.StringValue Id = 1;
+
+	google.protobuf.StringValue ContractSettingLineId = 2;
+	google.protobuf.StringValue ContractName = 3;
+	google.protobuf.Int32Value Position = 4;
+}
+

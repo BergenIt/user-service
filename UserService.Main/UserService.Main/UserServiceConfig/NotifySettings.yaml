@@ -1,0 +1,32 @@
+_:
+  UserTemplate: Произошло событие {0} в {1}
+  Contract:
+    NotifyEventType: Тип события
+    Timestamp: Тестируемое свойство
+
+ThreasholdError:
+  UserTemplate: ThreasholdError {0}, {1}
+  Contract:
+    TestProp: Вид на сайта этого свойства
+    SecondProp: Второе тестируемое свойство
+
+ThreasholdNormalize:
+  UserTemplate: ThreasholdNormalize {0}, {1}
+  Contract:
+    ContractProp: Тестируемое свойство
+    SecondContractProp: Вид на сайта этого свойства
+    
+UserExpiration:
+  UserTemplate: Срок действия аккаунта {0} истечет через 3 дня
+  Contract:
+    UserName: Логин пользователя
+    
+RoleExpiration:
+  UserTemplate: Срок действия роли {0} истечет через 3 дня
+  Contract:
+    UserName: Название роли
+    
+PasswordExpiration:
+  UserTemplate: Срок действия пароля от аккаунта {0} истечет через 3 дня
+  Contract:
+    UserName: Логин пользователя

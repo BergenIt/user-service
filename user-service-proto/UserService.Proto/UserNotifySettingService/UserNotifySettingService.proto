@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option csharp_namespace = "UserService.Proto";
+
+package UserService;
+
+import "UserService.Proto/UserNotifySetting.proto";
+import "UserService.Proto/UserNotifySettingService/UserNotifySettingGetRequest.proto";
+import "UserService.Proto/UserNotifySettingService/UserNotifySettingCommand.proto";
+
+//Сервис работы с настройками получателей уведомлений
+service UserNotifySettingService {
+    rpc GetUserNotifySettingById (UserNotifySettingGetRequest) returns (UserNotifySetting);
+    rpc GetUserNotifySettings (UserNotifySettingsGetRequest) returns (UserNotifySettingPage);
+    rpc CreateUserNotifySettings (UserNotifySettingsCreateCommand) returns (UserNotifySettings);  
+    //Patch
+    rpc UpdateUserNotifySettings (UserNotifySettingsUpdateCommand) returns (UserNotifySettings);
+    //Delete
+    rpc RemoveUserNotifySettings (UserNotifySettingsRemoveCommand) returns (UserNotifySettings);
+}
+

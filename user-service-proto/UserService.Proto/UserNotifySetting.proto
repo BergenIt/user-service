@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+option csharp_namespace = "UserService.Proto";
+
+package UserService;
+
+message UserNotifySettings {
+    repeated UserNotifySetting NotifySettingList = 1;
+}
+
+message UserNotifySettingPage {
+    repeated UserNotifySetting NotifySettingList = 1;
+
+    int32 CountItems = 2;
+}
+
+//Настройка получателей уведомлений
+message UserNotifySetting 
+{
+	string Id = 1;
+
+	bool Enable = 2;
+	
+    string ContractProfileId = 3;
+
+	repeated string TargetNotifies = 4;
+
+	string UserId = 5;
+}

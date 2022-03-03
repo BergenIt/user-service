@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+option csharp_namespace = "UserService.Proto";
+
+package UserService;
+
+message UserNotifySettingCreateCommand {
+	bool Enable = 1;
+	
+    string ContractProfileId = 2;
+
+	repeated string TargetNotifies = 3;
+
+	string UserId = 4;
+}
+
+message UserNotifySettingUpdateCommand {
+    // immutable field
+    string Id = 1;
+    // immutable field
+
+	bool Enable = 2;
+	
+	repeated string TargetNotifies = 3;
+
+	string UserId = 4;
+}
+
+message UserNotifySettingsRemoveCommand {
+    repeated string RemoveNotifySettingsId = 1;
+}
+
+message UserNotifySettingsCreateCommand {
+    repeated UserNotifySettingCreateCommand CreateNotifySettingsList = 1;
+}
+
+message UserNotifySettingsUpdateCommand {
+    repeated UserNotifySettingUpdateCommand UpdateNotifySettingsList = 1;
+}

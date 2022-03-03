@@ -1,0 +1,79 @@
+syntax = "proto3";
+
+option csharp_namespace = "UserService.Proto";
+
+package UserService;
+
+import "google/protobuf/wrappers.proto";
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/duration.proto";
+
+message Audit {
+    google.protobuf.StringValue UserName = 1;
+    google.protobuf.StringValue IpAddress = 2;
+    google.protobuf.StringValue Message = 3;
+    google.protobuf.StringValue Action = 4;
+    google.protobuf.Timestamp Timestamp = 5;
+    google.protobuf.StringValue FullName = 6;
+    google.protobuf.StringValue Subdivision = 7;
+    google.protobuf.StringValue Position = 8;
+    repeated google.protobuf.StringValue Roles = 9;
+}
+
+message UserAudit {
+    google.protobuf.StringValue FullName = 1;
+    google.protobuf.StringValue Subdivision = 2;
+    google.protobuf.StringValue Position = 3;
+    google.protobuf.StringValue Email = 4;
+    google.protobuf.StringValue UserName = 5;
+    repeated google.protobuf.StringValue ConnectionType = 6;
+    google.protobuf.Timestamp RegistredDate = 7;
+    repeated google.protobuf.StringValue Ips = 8;
+    google.protobuf.Timestamp LastLogin = 9;
+    google.protobuf.Duration ScreenTime = 10;
+    google.protobuf.Int64Value CountLogin = 11;
+}
+
+message SubdivisionAudit {
+    google.protobuf.StringValue FullName = 1;
+    google.protobuf.StringValue UserName = 2;
+    google.protobuf.StringValue Position = 3;
+    repeated google.protobuf.StringValue ConnectionType = 4;
+    repeated google.protobuf.StringValue Ips = 5;
+    google.protobuf.Duration ScreenTime = 6;
+    google.protobuf.Int64Value CountLogin = 7;
+}
+
+message SystemAudit {
+    google.protobuf.StringValue Subdivision = 1;
+    google.protobuf.Int32Value CountUsers = 2;
+    google.protobuf.Int64Value CountLogin = 3;
+    google.protobuf.Duration ScreenTime = 4;
+}
+
+message UserAuditPage {
+    repeated UserAudit UserAuditLogsList = 1;
+    int64 CountItems = 2;
+}
+
+message SubdivisionAuditGroup
+{
+    repeated SubdivisionAudit SubdivisionAuditLogsList = 1;
+    string Subdivision = 2;
+}
+
+message SubdivisionAuditPage {
+    repeated SubdivisionAuditGroup SubdivisionAuditLogsList = 1;
+    int64 CountItems = 2;
+}
+
+message SystemAuditPage {
+    repeated SystemAudit SystemAuditLogsList = 1;
+    int64 CountItems = 2;
+}
+
+message AuditPage {
+    repeated Audit AuditLogsList = 1;
+    int64 CountItems = 2;
+}
+

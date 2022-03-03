@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" Sdk="Microsoft.Docker.Sdk">
+  <PropertyGroup Label="Globals">
+    <ProjectVersion>2.1</ProjectVersion>
+    <DockerTargetOS>Linux</DockerTargetOS>
+    <ProjectGuid>a6fa7d64-280a-4120-bb5d-2b5db5d278cb</ProjectGuid>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="env\service-setting.env" />
+    <None Include="docker-compose.yml" />
+    <None Include=".dockerignore" />
+    <None Include="env\smtp-connect.env" />
+    <None Include="env\ldap-connect.env" />
+    <None Include="env\psql-connect.env" />
+    <None Include="env\elastic-connect.env" />
+  </ItemGroup>
+</Project>

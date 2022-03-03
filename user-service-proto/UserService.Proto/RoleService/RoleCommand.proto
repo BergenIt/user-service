@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+option csharp_namespace = "UserService.Proto";
+
+package UserService;
+
+import "google/protobuf/wrappers.proto";
+import "google/protobuf/timestamp.proto";
+
+import "UserService.Proto/RoleService/RoleModel.proto";
+
+message ChangeRoleLevelAccessCommand{
+    repeated RoleLevelAccess RoleLevelAccessList = 1;
+}
+
+message RoleCreateCommand {
+    string Name = 1;
+    google.protobuf.StringValue Comment = 2;
+    google.protobuf.Timestamp RoleExpiration = 3;
+}
+
+message RoleUpdateCommand {
+    // immutable field
+    string Id = 1;
+    // immutable field
+
+    string Name = 2;
+    google.protobuf.StringValue Comment = 3;
+    google.protobuf.Timestamp RoleExpiration = 4;
+}
+
+message RolesRemoveCommand {
+    repeated string RemoveRolesId = 1;
+}
+
+message RolesCreateCommand {
+    repeated RoleCreateCommand CreateRolesList = 1;
+}
+
+message RolesUpdateCommand {
+    repeated RoleUpdateCommand UpdateRolesList = 1;
+}

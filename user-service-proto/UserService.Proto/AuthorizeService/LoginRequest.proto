@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option csharp_namespace = "UserService.Proto";
+
+package UserService;
+
+message LoginRequest {
+  string UserName = 1;
+  string Password = 2;
+}

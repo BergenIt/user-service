@@ -1,0 +1,38 @@
+PermissionAssert:
+  Read: Доступ на чтение
+  Write: Доступ на чтение, создание и изменение
+  Remove: Полный доступ
+  
+UserState:
+  Active: Активен
+  Unactive: Неактивен
+  Lock: Заблокирован
+  
+WebHookContractType:
+  Json: Json формат
+  StringArray: Текстовый формат
+
+TargetNotify:
+  Email: Электронная почта
+  Socket: Оповещение на сайте
+
+ServiceSettingAttribute:
+  LdapDistinguishedName: DistinguishedName системного аккаунта в ActiveDirectory 
+  LdapDistinguishedPassword: Пароль системного аккаунта в ActiveDirectory 
+  LdapSearchBase: Базовая строка поиска пользователей в ActiveDirectory (SearchBase)
+  LdapLoginAttributeName: Название аттрибута пользователя в ActiveDirectory, используемого для авторизации в системе
+  LdapRouteEmail: Название аттрибута пользователя в ActiveDirectory, используемого для определения электронной почты пользователя
+  LdapRouteFullname: Название аттрибута пользователя в ActiveDirectory, используемого для определения ФИО пользователя
+  LdapRouteSubdivision: Название аттрибута пользователя в ActiveDirectory, используемого для определения структурного подразделения пользователя
+  LdapHost: Адрес сервера ActiveDirectory
+  LdapPort: Порт для подключению по протоколу LDAP на сервер ActiveDirectory
+  LdapTimeout: Время ожидания ответа от сервера ActiveDirectory
+  LdapSsl: Использование Ssl соединения при подключении к ActiveDirectory
+
+  SmtpHost: Адрес Smtp сервера
+  SmtpPort: Порт Smtp сервера
+  SmtpSslUse: Использование Ssl соединения при подключении к Smtp серверу
+  SmtpLogin: Логин, использующийся при авторизации на Smtp сервере
+  SmtpPassword: Пароль, использующийся при авторизации на Smtp сервере
+  SmtpSenderName: Имя, используемое при отправке email
+  SmtpSenderAddress: Адрес, используемый при отправке email

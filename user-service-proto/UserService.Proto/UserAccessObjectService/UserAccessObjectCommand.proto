@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option csharp_namespace = "UserService.Proto";
+
+package UserService;
+
+message AddAccessObjectsToUserCommand {
+   string UserId = 1;
+   repeated string AddAccessObjectIds = 2;
+}
+
+message RemoveAccessObjectsFromUserCommand {
+   string UserId = 1;
+   repeated string RemoveAccessObjectIds = 2;
+}
+
+message AddUsersToAccessObjectCommand {
+   string AccessObjectId = 1;
+   repeated string AddUserIds = 2;
+}
+
+message RemoveUsersFromAccessObjectCommand {
+   string AccessObjectId = 1;
+   repeated string RemoveUserIds = 2;
+}
+

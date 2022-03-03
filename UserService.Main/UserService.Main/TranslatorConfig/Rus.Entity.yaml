@@ -1,0 +1,19 @@
+EntityState:
+  Deleted: Удаление
+  Modified: Изменение
+  Added: Создание
+
+AuditEntityAttribute:
+  ContractProfile: профиля контракта уведомления
+  ContractSettingLine: строки контракта уведомления
+  RoleNotificationSetting: настройки уведомлений роли
+  UserNotificationSetting: настройки уведомлений пользователя
+  Permission: прав доступа
+  Position: должности
+  WebHook: вебхука
+  ServiceSetting: настройки системы
+  Role: роли
+  User: пользователя системы
+  UserRole: роли пользователя системы
+  Subdivision: структурного подразделения
+  RoleClaim: прав доступа по контуру

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option csharp_namespace = "UserService.Proto";
+
+package UserService;
+
+import "google/protobuf/wrappers.proto";
+
+message ContractProfileProppertyTemplate
+{
+    // Массив из имен доступных свойств для создания профиля контракта
+	repeated google.protobuf.StringValue ContractName = 1;
+}

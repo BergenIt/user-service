@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects Condition="'$(MSBuildVersion)' == '' Or '$(MSBuildVersion)' &lt; '16.0'">$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>4a8244a8-f7bb-49d1-b693-54baf877a785</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>PROTOSCHEMA</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)Filters\Filter.proto">
+      <Generator>TextTemplatingFileGenerator</Generator>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Filters\GroupFilter.proto">
+      <Generator>TextTemplatingFileGenerator</Generator>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Filters\TimeRangeFilter.proto">
+      <Generator>TextTemplatingFileGenerator</Generator>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Filters\SortFilter.proto">
+      <Generator>TextTemplatingFileGenerator</Generator>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Filters\SearchFilter.proto">
+      <Generator>TextTemplatingFileGenerator</Generator>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Filters\PaginationFilter.proto">
+      <Generator>TextTemplatingFileGenerator</Generator>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)InternalItems\List.proto">
+      <Generator>TextTemplatingFileGenerator</Generator>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)InternalItems\GroupList.proto">
+      <Generator>TextTemplatingFileGenerator</Generator>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)InternalItems\Group.proto">
+      <Generator>TextTemplatingFileGenerator</Generator>
+    </None>
+  </ItemGroup>
+</Project>

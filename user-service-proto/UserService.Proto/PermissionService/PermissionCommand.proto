@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+option csharp_namespace = "UserService.Proto";
+
+import "google/protobuf/wrappers.proto";
+
+package UserService;
+
+message PermissionCreateCommand {
+    google.protobuf.StringValue Name = 1;
+    google.protobuf.StringValue Comment = 2;
+
+    repeated string ResourceIds = 3;
+    repeated string LockedResourceIds = 4;
+
+    repeated string RoleIds = 5;
+
+    repeated string MotherPermissionIds = 6;
+}
+
+message PermissionUpdateCommand {
+    // immutable field
+    string Id = 1;
+
+    google.protobuf.StringValue Name = 2;
+    google.protobuf.StringValue Comment = 3;
+
+    repeated string ResourceIds = 4;
+    repeated string LockedResourceIds = 5;
+
+    repeated string RoleIds = 6;
+
+    repeated string MotherPermissionIds = 7;
+}
+
+message ChangePermissionRolesCommand {
+    // immutable field
+    string PermissionId = 1;
+
+    repeated string RoleIds = 2;
+}
+
+message PermissionsRemoveCommand {
+    repeated string RemovePermissionsId = 1;
+}
+

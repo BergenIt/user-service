@@ -1,0 +1,9 @@
+NotifyEventType:
+
+  _: Стандартный тип уведомления
+  ThreasholdNormalize: Превышение порогового значения
+  ThreasholdError: Нормализация значения, относительно порогового
+
+  UserExpiration: Истечение срока жизни пользователя
+  RoleExpiration: Истечение срока жизни роли
+  PasswordExpiration: Истечение срока жизни пароля

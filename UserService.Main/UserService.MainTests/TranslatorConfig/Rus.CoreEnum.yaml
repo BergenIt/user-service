@@ -1,0 +1,94 @@
+PermissionAssert:
+  Read: Доступ на чтение
+  Write: Доступ на чтение, создание и изменение
+  Remove: Полный доступ
+  
+UserState:
+  Active: Активен
+  Unactive: Неактивен
+  Lock: Заблокирован
+  
+WebHookContractType:
+  Json: Json формат
+  StringArray: Электронная почта
+
+TargetNotify:
+  Email: Json формат
+  Socket: Оповещение на сайте
+
+NotifyEventType:
+  _: Стандартный тип уведомления
+  ThreasholdNormalize: Превышение порогового значения
+  ThreasholdError: Нормализация значения, относительно порогового
+  UserExpiration: Истечение срока действия учетной записи
+  RoleExpiration: Истечение срока действия роли
+  PasswordExpiration: Истечение срока действия пароля
+
+ServiceSettingAttribute:
+  LdapDistinguishedName: DistinguishedName системного аккаунта в ActiveDirectory 
+  LdapDistinguishedPassword: Пароль системного аккаунта в ActiveDirectory 
+  LdapSearchBase: Базовая строка поиска пользователей в ActiveDirectory (SearchBase)
+  LdapLoginAttributeName: Название аттрибута пользователя в ActiveDirectory, используемого для авторизации в системе
+  LdapRouteEmail: Название аттрибута пользователя в ActiveDirectory, используемого для определения электронной почты пользователя
+  LdapRouteFullname: Название аттрибута пользователя в ActiveDirectory, используемого для определения ФИО пользователя
+  LdapRouteSubdivision: Название аттрибута пользователя в ActiveDirectory, используемого для определения структурного подразделения пользователя
+  LdapHost: Адрес сервера ActiveDirectory
+  LdapPort: Порт для подключению по протоколу LDAP на сервер ActiveDirectory
+  LdapTimeout: Время ожидания ответа от сервера ActiveDirectory
+  LdapSsl: Использование Ssl соединения при подключении к ActiveDirectory
+
+  SmtpHost: Адрес Smtp сервера
+  SmtpPort: Порт Smtp сервера
+  SmtpSslUse: Использование Ssl соединения при подключении к Smtp серверу
+  SmtpLogin: Логин, использующийся при авторизации на Smtp сервере
+  SmtpPassword: Пароль, использующийся при авторизации на Smtp сервере
+  SmtpSenderName: Имя, используемое при отправке email
+  SmtpSenderAddress: Адрес, используемый при отправке email
+
+IPasswordManager:
+  Subject: Менеджер паролей
+  Send: Сгенерированный пароль входа в систему
+  CreateForgotPasswordToken: Перейдите по ссылке для восстановления пароля
+  GetForgotPasswordUrl: Пользователь получил ссылку для восстановления забытого пароля
+  ChangeUserPassword: Пользователь сменил свой пароль
+  _: Смена пароля
+
+IAuthorizer:
+  LoginAsync: Пользователь вошел в систему
+  LogoutAsync: Пользователь вышел из системы
+  _: Авторизация
+
+EntityState:
+  Deleted: Удаление
+  Modified: Изменение
+  Added: Создание
+
+AuditEntityAttribute:
+  ContractProfile: профиля контракта уведомления
+  ContractSettingLine: строки контракта уведомления
+  NotificationSetting: настройки уведомлений
+  Permission: прав доступа
+  Position: должности
+  WebHook: вебхука
+  ServiceSetting: настройки системы
+  Role: роли
+  User: пользователя системы
+  UserRole: роли пользователя системы
+  Subdivision: структурного подразделения
+  RoleClaim: прав доступа по контуру
+
+AuditException:
+  ActiveDirectoryUserOperationLockException: Данная операция недоступна для пользователя, подключенного из ActiveDirectory
+  CaptchaCodeException: Ошибка ввода капчи
+  InvalidUserTokenException: Ошибка валидации токена пользователя
+  JtiUserException: Данному пользователю необходимо сменить пароль для продолжения пользования системой
+  PasswordInputException: Неправильно введенный пароль
+  PasswordInvalidChangeException: Ошибка при смене пароля
+  ServiceSettingValidateException: Введены невалидные настройки системы
+  SessionTimeoutException: Сессия истекла
+  UserLockException: Пользователь заблокирован
+  UserNotExistException: Пользователь не найден
+  ValidateNotificationSettingException: Введен невалидный шаблон уведомления
+  UserNotificationDeletePermissionException: Попытка удаления чужого уведомления
+  UserNotificationReadPermissionException: Попытка чтения чужого уведомления
+  UserNotFoundException: Попытка входа в несуществующий аккаунт

@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option csharp_namespace = "UserService.Proto";
+
+package UserService;
+
+import "UserService.Proto/User.proto";
+import "UserService.Proto/UserManagerService/UserGetRequest.proto";
+import "UserService.Proto/UserManagerService/UserCommand.proto";
+
+//Сервис работы с пользователями
+service UserManagerService {
+  rpc GetUserByUserName (UserGetRequest) returns (User);
+  rpc GetUsers (UsersGetRequest) returns (UserPage);
+  rpc CreateUsers (UsersCreateCommand) returns (Users);  
+  //Patch
+  rpc UpdateUsers (UsersUpdateCommand) returns (Users);
+  //Delete
+  rpc RemoveUsers (UsersRemoveCommand) returns (Users);
+}

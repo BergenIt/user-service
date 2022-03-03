@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+      <TargetFramework>net5.0</TargetFramework>
+      <OutputType>Library</OutputType>
+    </PropertyGroup>
+  
+    <ItemGroup>
+      <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="5.0.7" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite.Core" Version="5.0.7" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="5.0.7" />
+    </ItemGroup>
+    
+    <ItemGroup>
+      <ProjectReference Include="..\..\UserService.Core\UserService.Core\UserService.Core.csproj" />
+	</ItemGroup>
+
+</Project>

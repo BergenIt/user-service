@@ -1,0 +1,64 @@
+Resources:
+# ---USER-SERVICE SYSTEM RESOURCES--- #
+  UserService/AuditService: 
+    Name: Журнал аудита
+  UserService/ContractProfileService: 
+    Name: Контракты уведомлений
+  UserService/LifecycleIndexService: 
+    Name: Управление индексами журналов
+  UserService/PermissionService/Permission: 
+    Name: Права доступа 
+  UserService/PositionService: 
+    Name: Управление должностями
+  UserService/RoleService/Role: 
+    Name: Управление ролями
+    Relations:
+      Preview/UserService/PermissionService/Permission : Read
+  UserService/ServiceSettingService: 
+    Name: Управление настройками LDAP SMTP подключений
+  UserService/SubdivisionService: 
+    Name: Управление структурными подразделениями
+
+  UserService/UserManagerService: 
+    Name: Управление пользователями
+    Relations:
+      Preview/UserService/RoleService/Role : Read
+      Preview/UserService/SubdivisionService : Read
+      Preview/UserService/PositionService : Read
+
+  UserService/UserNotifySettingService: 
+    Name: Управление настройками уведомлений пользователей
+    Relations:
+      Preview/UserService/UserManagerService : Read
+      Preview/UserService/ContractProfileService : Read
+
+  UserService/WebhookService: 
+    Name: Управление настройками вебхуков
+    Relations:
+      Preview/UserService/ContractProfileService : Read
+
+  UserService/PermissionService/RolePermissions: 
+    Name: Права доступа ролей
+    Relations:
+      Preview/UserService/RoleService/Role : Read
+      Preview/UserService/PermissionService/Permission : Read
+
+  UserService/RoleNotifySettingService: 
+    Name: Управление настройками уведомлений ролей
+    Relations:
+      Preview/UserService/RoleService/Role : Read
+      Preview/UserService/SubdivisionService : Read
+      Preview/UserService/ContractProfileService : Read
+
+  UserService/RoleService/AssertLevel: 
+    Name: Управление уровнем доступа ролей
+    Relations:
+      Preview/UserService/RoleService/Role : Read
+      Preview/UserService/PermissionService/Permission : Read
+      Preview/UserService/PermissionService/RolePermissions : Read
+
+  UserService/UserAccessObjectService: 
+    Name: Управление доступом пользователей к контурам
+    Relations:
+      Preview/UserService/UserManagerService : Read
+# ---USER-SERVICE SYSTEM RESOURCES--- #

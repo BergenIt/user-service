@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+option csharp_namespace = "UserService.Proto";
+
+package UserService;
+
+import "google/protobuf/wrappers.proto";
+
+message SubdivisionPage {
+    repeated Subdivision SubdivisionList = 1;
+
+    int32 CountItems = 2;
+}
+
+message Subdivisions {
+    repeated Subdivision SubdivisionList = 1;
+}
+
+//Структурное подразделение
+message Subdivision {
+    string Id = 1;
+    string Name = 2;
+    google.protobuf.StringValue Comment = 3;
+}

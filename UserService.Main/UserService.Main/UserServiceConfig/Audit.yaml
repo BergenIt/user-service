@@ -1,0 +1,9 @@
+Actions:
+  AuditException: Ошибка пользователя
+  IPasswordManager: Смена пароля
+  IAuthorizer: Авторизация
+  Modified: Обновление сущности
+  Deleted: Удаление сущности
+  Added: Создание сущности
+  Activated: Активация 
+

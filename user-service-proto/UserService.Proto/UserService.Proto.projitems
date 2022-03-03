@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects Condition="'$(MSBuildVersion)' == '' Or '$(MSBuildVersion)' &lt; '16.0'">$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>4a8244a8-f7bb-49d1-b693-54baf877a785</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>UserService.Proto</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)ContractProfileService\ContractProfileModels.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)EnumService\EnumResponse.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)LifecycleIndexService\LifecycleIndexModel.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)LifecycleIndexService\LifecycleIndexRequest.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)LifecycleIndexService\LifecycleIndexService.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)UserNotifySetting.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)WebhookService\WebhookModel.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)WebhookService\WebhookCommand.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)WebhookService\WebhookGetRequest.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)WebhookService\WebhookService.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)UserNotifySettingService\UserNotifySettingCommand.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)UserNotifySettingService\UserNotifySettingGetRequest.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)UserNotifySettingService\UserNotifySettingService.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)RoleService\RoleModel.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)UserAccessObjectService\UserAccessObjectCommand.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)UserAccessObjectService\UserAccessObjectRequest.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)UserAccessObjectService\UserAccessObjectModels.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)UserAccessObjectService\UserAccessObjectService.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)PermissionService\PermissionModels.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)ServiceSettingService\ServiceSettingRequest.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)ServiceSettingService\ServiceSettingModel.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)ServiceSettingService\ServiceSettingService.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)PasswordService\PasswordService.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)PasswordService\PasswordRequest.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)PasswordService\PasswordCommand.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)CaptchaService\CaptchaService.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)ContractProfileService\ContractProfileCommand.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)ContractProfileService\ContractProfileRequest.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)ContractProfileService\ContractProfileService.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)EnumService\EnumService.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)EnumService\EnumRequest.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)NotificationService\NotificationModels.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)NotificationService\NotificationService.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)ContractProfile.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)RoleNotifySetting.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Position.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Permission.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)AuditService\AuditModels.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)AuditService\AuditQuery.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)AuditService\AuditService.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)RoleNotifySettingService\RoleNotifySettingCommand.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)RoleNotifySettingService\RoleNotifySettingGetRequest.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)RoleNotifySettingService\RoleNotifySettingService.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)PositionService\PositionCommand.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)PositionService\PositionGetRequest.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)PositionService\PositionService.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Subdivision.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Role.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)PermissionService\PermissionCommand.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)PermissionService\PermissionGetRequest.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)PermissionService\PermissionService.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)SubdivisionService\SubdivisionCommand.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)SubdivisionService\SubdivisionGetRequest.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)SubdivisionService\SubdivisionService.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)RoleService\RoleService.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)RoleService\RoleGetRequest.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)RoleService\RoleCommand.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)User.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)UserManagerService\UserCommand.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)UserManagerService\UserGetRequest.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)UserManagerService\UserManagerService.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)NotificationService\NotificationRequest.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)AuthorizeService\Token.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)AuthorizeService\LoginRequest.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)AuthorizeService\AuthorizeService.proto">
+      <GrpcServices>Server</GrpcServices>
+    </None>
+  </ItemGroup>
+</Project>

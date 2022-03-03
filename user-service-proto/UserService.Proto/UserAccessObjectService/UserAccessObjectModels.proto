@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option csharp_namespace = "UserService.Proto";
+
+package UserService;
+
+message UserAccessObjects
+{
+   string UserId = 1;
+   repeated string AccessObjectIds = 2;
+}
+
+message AccessObjectUsers
+{
+   string AccessObjectId = 1;
+   repeated string UserIds = 2;
+}

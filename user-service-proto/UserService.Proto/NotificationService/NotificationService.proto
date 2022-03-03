@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option csharp_namespace = "UserService.Proto";
+
+package UserService;
+
+import "google/protobuf/empty.proto";
+
+import "UserService.Proto/NotificationService/NotificationRequest.proto";
+import "UserService.Proto/NotificationService/NotificationModels.proto";
+
+service NotificationService {
+  //Получить уведомления по текущему пользователю
+  rpc GetUserNotifications (UserNotificationGetRequest) returns (Notifications);
+  rpc ReadUserNotifications (ReadUserNotificationsCommand) returns (google.protobuf.Empty);
+  rpc DeleteUserNotifications (DeleteUserNotificationsCommand) returns (google.protobuf.Empty);
+
+  rpc CreateNotification (CreateNotificationCommand) returns (google.protobuf.Empty);
+}

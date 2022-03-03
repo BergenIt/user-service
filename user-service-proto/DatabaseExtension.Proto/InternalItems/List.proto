@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option csharp_namespace = "DatabaseExtension.Proto";
+
+package DatabaseExtension;
+
+import "google/protobuf/any.proto";
+import "google/protobuf/wrappers.proto";
+
+import "DatabaseExtension.Proto/Filters/PaginationFilter.proto";
+
+message List {
+    repeated google.protobuf.Any Items = 1;
+    int32 CountItems = 2;
+    PaginationFilter PaginationFilter = 3;
+    google.protobuf.StringValue SourceTypeName = 4;
+}

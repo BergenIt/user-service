@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+option csharp_namespace = "UserService.Proto";
+
+package UserService;
+
+import "UserService.Proto/UserAccessObjectService/UserAccessObjectRequest.proto";
+import "UserService.Proto/UserAccessObjectService/UserAccessObjectCommand.proto";
+import "UserService.Proto/UserAccessObjectService/UserAccessObjectModels.proto";
+
+//Сервис работы с правами доступа пользователей к объектам
+service UserAccessObjectService {
+
+    rpc GetUserAccessObjects (GetUserAccessObjectsRequest) returns (UserAccessObjects);
+
+    rpc GetAccessObjectUsers (GetAccessObjectUsersRequest) returns (AccessObjectUsers);
+
+    //Put
+    rpc AddAccessObjectsToUser (AddAccessObjectsToUserCommand) returns (UserAccessObjects);  
+    //Delete
+    rpc RemoveAccessObjectsFromUser (RemoveAccessObjectsFromUserCommand) returns (UserAccessObjects);
+
+    //Put
+    rpc AddUsersToAccessObject (AddUsersToAccessObjectCommand) returns (AccessObjectUsers);  
+    //Delete
+    rpc RemoveUsersFromAccessObject (RemoveUsersFromAccessObjectCommand) returns (AccessObjectUsers);
+}

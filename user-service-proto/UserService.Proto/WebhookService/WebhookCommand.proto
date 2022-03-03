@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+option csharp_namespace = "UserService.Proto";
+
+package UserService;
+
+import "google/protobuf/wrappers.proto";
+
+message WebhookCreateCommand {
+    string Name = 1;
+    google.protobuf.StringValue Comment = 2;
+
+    string Url = 3;
+    string WebHookContractType = 4;
+    string ContractProfileId = 5;
+
+	bool Enable = 6;
+}
+
+message WebhookUpdateCommand {
+    // immutable field
+    string Id = 1;
+    // immutable field
+
+    string Name = 2;
+    google.protobuf.StringValue Comment = 3;
+
+    string Url = 4;
+    string WebHookContractType = 5;
+
+	bool Enable = 6;
+}
+
+message WebhooksRemoveCommand {
+    repeated string RemoveWebhookIds = 1;
+}
+
+message WebhooksCreateCommand {
+    repeated WebhookCreateCommand CreateWebhookList = 1;
+}
+
+message WebhooksUpdateCommand {
+    repeated WebhookUpdateCommand UpdateWebhookList = 1;
+}

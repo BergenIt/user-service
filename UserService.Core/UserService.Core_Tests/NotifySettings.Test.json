@@ -1,0 +1,25 @@
+{
+  "_": {
+    "UserTemplate": "Произошло событие {0} в {1}",
+    "Contract": {
+      "NotifyEventType": "Тип события",
+      "Timestamp": "Тестируемое свойство"
+    }
+  },
+
+  "Test": {
+    "UserTemplate": "Test",
+    "Contract": {
+      "TestProp": "Тестируемое свойство",
+      "SecondProp": "Второе тестируемое свойство"
+    }
+  },
+
+  "ThreasholdNormalize": {
+    "UserTemplate": "ThreasholdNormalize: {0}, {1}",
+    "Contract": {
+      "ContractProp": "Тестируемое свойство",
+      "SecondContractProp": "Вид на сайта этого свойства"
+    }
+  }
+}

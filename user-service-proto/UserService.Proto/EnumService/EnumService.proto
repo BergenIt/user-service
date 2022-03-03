@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option csharp_namespace = "UserService.Proto";
+
+package UserService;
+
+import "UserService.Proto/EnumService/EnumRequest.proto";
+import "UserService.Proto/EnumService/EnumResponse.proto";
+
+service EnumService {
+    rpc GetPermissionAsserts (EnumRequest) returns (EnumResponse);
+    rpc GetUserStates (EnumRequest) returns (EnumResponse);
+    rpc GetTargetNotifies (EnumRequest) returns (EnumResponse);
+    rpc GetWebHookContractTypes (EnumRequest) returns (EnumResponse);
+    rpc GetNotifyEventTypes (EnumRequest) returns (EnumResponse);
+}
+

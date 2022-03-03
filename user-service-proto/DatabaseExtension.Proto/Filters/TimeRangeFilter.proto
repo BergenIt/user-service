@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option csharp_namespace = "DatabaseExtension.Proto";
+
+package DatabaseExtension;
+
+import "google/protobuf/timestamp.proto";
+
+message TimeRangeFilter {
+    string ColumnName = 1;
+
+    google.protobuf.Timestamp StartRange = 2;
+    google.protobuf.Timestamp EndRange = 3;
+}
