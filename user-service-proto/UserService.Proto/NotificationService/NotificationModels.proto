@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+option csharp_namespace = "UserService.Proto";
+
+package UserService;
+
+import "google/protobuf/timestamp.proto";
+
+message Notification {
+    string Id = 1;
+    string NotifyEventType = 2;
+
+    google.protobuf.Timestamp Timestamp = 3;
+
+    string Message = 4;
+
+    string ObjectId = 5;
+
+    bool IsRead = 6;
+}
+
+message Notifications {
+    repeated Notification NotificationList = 1;
+
+    int64 NotificationCount = 2;
+}
+
+message CreateNotificationCommand {
+    string NotifyEventType = 1;
+
+    string ObjectId = 2;
+
+    map<string, string> JsonData = 3;
+}
+
+message ReadUserNotificationsCommand{
+    repeated string UserNotificationIds = 1;
+}
+
+message DeleteUserNotificationsCommand{
+    repeated string UserNotificationIds = 1;
+}

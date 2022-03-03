@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option csharp_namespace = "UserService.Proto";
+
+package UserService;
+
+import "google/protobuf/wrappers.proto";
+
+message Positions {
+    repeated Position PositionList = 1;
+}
+
+message PositionPage {
+    repeated Position PositionList = 1;
+
+    int32 CountItems = 2;
+}
+
+//Должность пользователя
+message Position {
+    string Id = 1;
+
+    string Name = 2;
+    google.protobuf.StringValue Comment = 3;
+}

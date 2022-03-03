@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option csharp_namespace = "UserService.Proto";
+
+package UserService;
+
+import "DatabaseExtension.Proto/Filters/Filter.proto";
+
+message PositionGetRequest {
+    string Id = 1;
+}
+
+message PositionsGetRequest {
+    DatabaseExtension.Filter Filter = 1;
+}

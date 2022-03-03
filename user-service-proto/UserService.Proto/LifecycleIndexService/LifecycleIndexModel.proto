@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+option csharp_namespace = "UserService.Proto";
+
+package UserService;
+
+import "google/protobuf/duration.proto";  
+import "google/protobuf/wrappers.proto";
+
+message LifecycleIndices {
+    repeated LifecycleIndex LifecycleIndexList = 1;
+}
+
+message LifecycleIndex {
+    string Id = 1;
+
+    DeletePolicyPhase DeletePolicyPhase = 2;
+    WarmPolicyPhase WarmPolicyPhase = 3;
+    HotPolicyPhase HotPolicyPhase = 4;
+}
+
+message HotPolicyPhase {
+    google.protobuf.Duration MaximumAge = 1;
+    google.protobuf.StringValue MaximumSize = 2;
+    google.protobuf.Int64Value MaximumDocuments = 3;
+}
+
+message DeletePolicyPhase {
+    google.protobuf.Duration MinimumAge = 1;
+
+}
+
+message WarmPolicyPhase {
+    google.protobuf.Duration MinimumAge = 1;
+}

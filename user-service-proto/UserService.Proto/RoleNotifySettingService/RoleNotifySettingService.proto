@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option csharp_namespace = "UserService.Proto";
+
+package UserService;
+
+import "UserService.Proto/RoleNotifySetting.proto";
+import "UserService.Proto/RoleNotifySettingService/RoleNotifySettingGetRequest.proto";
+import "UserService.Proto/RoleNotifySettingService/RoleNotifySettingCommand.proto";
+
+//Сервис работы с настройками получателей уведомлений
+service RoleNotifySettingService {
+    rpc GetRoleNotifySettingById (RoleNotifySettingGetRequest) returns (RoleNotifySetting);
+    rpc GetRoleNotifySettings (RoleNotifySettingsGetRequest) returns (RoleNotifySettingPage);
+    rpc CreateRoleNotifySettings (RoleNotifySettingsCreateCommand) returns (RoleNotifySettings);  
+    //Patch
+    rpc UpdateRoleNotifySettings (RoleNotifySettingsUpdateCommand) returns (RoleNotifySettings);
+    //Delete
+    rpc RemoveRoleNotifySettings (RoleNotifySettingsRemoveCommand) returns (RoleNotifySettings);
+}
+

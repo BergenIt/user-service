@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option csharp_namespace = "UserService.Proto";
+
+package UserService;
+
+import "DatabaseExtension.Proto/Filters/Filter.proto";
+
+message WebhookGetRequest {
+    string Id = 1;
+}
+
+message WebhooksGetRequest {
+    string ContractProfileId = 1;
+
+    DatabaseExtension.Filter Filter = 2;
+}

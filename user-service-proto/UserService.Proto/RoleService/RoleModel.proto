@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option csharp_namespace = "UserService.Proto";
+
+package UserService;
+
+message RoleLevelAccessList{
+    repeated RoleLevelAccess RoleLevelAccessList = 1;
+}
+
+message RoleLevelAccess{
+    string PermissionAssert = 1;
+    string Name = 2;
+    string ResourceTag = 3;
+
+    string RoleId = 4;
+}

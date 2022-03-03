@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option csharp_namespace = "UserService.Proto";
+
+package UserService;
+
+import "UserService.Proto/Position.proto";
+import "UserService.Proto/PositionService/PositionGetRequest.proto";
+import "UserService.Proto/PositionService/PositionCommand.proto";
+
+//Сервис работы с должностями пользователей
+service PositionService {
+    rpc GetPositionById (PositionGetRequest) returns (Position);
+    rpc GetPositions (PositionsGetRequest) returns (PositionPage);
+    rpc CreatePositions (PositionsCreateCommand) returns (Positions);  
+    //Patch
+    rpc UpdatePositions (PositionsUpdateCommand) returns (Positions);
+    //Delete
+    rpc RemovePositions (PositionsRemoveCommand) returns (Positions);
+}
+

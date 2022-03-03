@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option csharp_namespace = "DatabaseExtension.Proto";
+
+package DatabaseExtension;
+
+import "google/protobuf/wrappers.proto";
+
+message GroupFilter {
+    google.protobuf.StringValue GroupName = 1;
+}

@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option csharp_namespace = "UserService.Proto";
+
+package UserService;
+
+import "UserService.Proto/WebhookService/WebhookGetRequest.proto";
+import "UserService.Proto/WebhookService/WebhookCommand.proto";
+import "UserService.Proto/WebhookService/WebhookModel.proto";
+
+//Сервис работы с настройками вебхуков 
+service WebhookService {
+    rpc GetWebhookById (WebhookGetRequest) returns (Webhook);
+    rpc GetWebhooks (WebhooksGetRequest) returns (WebhookPage);
+    rpc CreateWebhooks (WebhooksCreateCommand) returns (Webhooks);  
+    //Patch
+    rpc UpdateWebhooks (WebhooksUpdateCommand) returns (Webhooks);
+    //Delete
+    rpc RemoveWebhooks (WebhooksRemoveCommand) returns (Webhooks);
+}

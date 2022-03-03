@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option csharp_namespace = "UserService.Proto";
+
+package UserService;
+
+import "google/protobuf/wrappers.proto";
+import "google/protobuf/timestamp.proto";
+
+message RolePage {
+    repeated Role RoleList = 1;
+
+    int32 CountItems = 2;
+}
+
+message Roles {
+    repeated Role RoleList = 1;
+}
+
+message Role {
+    string Id = 1;
+    string Name = 2;
+    google.protobuf.StringValue Comment = 3;
+    google.protobuf.Timestamp RoleExpiration = 4;
+}

@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option csharp_namespace = "UserService.Proto";
+
+package UserService;
+
+import "UserService.Proto/AuditService/AuditModels.proto";
+import "UserService.Proto/AuditService/AuditQuery.proto";
+
+import "google/protobuf/empty.proto";
+
+//Сервис аудита
+service AuditService {
+    rpc GetAuditLogs (GetAuditLogsRequest) returns (AuditPage);
+    rpc GetUserAuditLogs (GetUserAuditRequest) returns (UserAuditPage);
+    rpc GetSubdivisionAuditLogs (GetSubdivisionAuditRequest) returns (SubdivisionAuditPage);
+    rpc GetSystemAuditLogs (GetSystemAuditRequest) returns (SystemAuditPage);
+
+    //Создать запись в журнале аудита
+    rpc CreateAudit (AuditCreateCommand) returns (google.protobuf.Empty);
+}
+

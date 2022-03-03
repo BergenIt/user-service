@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option csharp_namespace = "UserService.Proto";
+
+package UserService;
+
+import "UserService.Proto/Subdivision.proto";
+import "UserService.Proto/SubdivisionService/SubdivisionGetRequest.proto";
+import "UserService.Proto/SubdivisionService/SubdivisionCommand.proto";
+
+// Сервис работы с структурными подразделениями
+service SubdivisionService {
+    rpc GetSubdivisionById (SubdivisionGetRequest) returns (Subdivision);
+    rpc GetSubdivisions (SubdivisionsGetRequest) returns (SubdivisionPage);
+    rpc CreateSubdivisions (SubdivisionsCreateCommand) returns (Subdivisions);  
+    //Patch
+    rpc UpdateSubdivisions (SubdivisionsUpdateCommand) returns (Subdivisions);
+    //Delete
+    rpc RemoveSubdivisions (SubdivisionsRemoveCommand) returns (Subdivisions);
+}
+

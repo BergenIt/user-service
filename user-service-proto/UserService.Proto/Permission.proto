@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+option csharp_namespace = "UserService.Proto";
+
+package UserService;
+
+import "google/protobuf/wrappers.proto";
+
+import "UserService.Proto/Role.proto";
+
+message Permissions {
+    repeated Permission PermissionList = 1;
+}
+
+message PermissionPage {
+    repeated Permission PermissionList = 1;
+
+    int32 CountItems = 2;
+}
+
+message Resource {
+    string Id = 1;
+
+    string Tag = 2;
+    string Name = 3;
+}
+
+//Группа ресурсов прав доступа 
+message Permission {
+    string Id = 1;
+
+    google.protobuf.StringValue Name = 2;
+    google.protobuf.StringValue Comment = 3;
+
+    repeated Role Roles = 4;
+
+    repeated Resource Resources = 5;
+    repeated Resource LockedResources = 6;
+
+    repeated Permission MotherPermissions = 7;
+}

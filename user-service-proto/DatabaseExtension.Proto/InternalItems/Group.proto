@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option csharp_namespace = "DatabaseExtension.Proto";
+
+package DatabaseExtension;
+
+import "google/protobuf/any.proto";
+import "google/protobuf/wrappers.proto";
+
+message Group {
+    repeated google.protobuf.Any Items = 1;
+    google.protobuf.StringValue GroupKey = 2;
+}

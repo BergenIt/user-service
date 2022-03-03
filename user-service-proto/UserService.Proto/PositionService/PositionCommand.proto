@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+option csharp_namespace = "UserService.Proto";
+
+package UserService;
+
+import "google/protobuf/wrappers.proto";
+
+message PositionCreateCommand {
+    string Name = 1;
+
+    google.protobuf.StringValue Comment = 2;
+}
+
+message PositionUpdateCommand {
+    // immutable field
+    string Id = 1;
+    // immutable field
+
+    string Name = 2;
+
+    google.protobuf.StringValue Comment = 3;
+}
+
+message PositionsRemoveCommand {
+    repeated string RemovePositionsId = 1;
+}
+
+message PositionsCreateCommand {
+    repeated PositionCreateCommand CreatePositionsList = 1;
+}
+
+message PositionsUpdateCommand {
+    repeated PositionUpdateCommand UpdatePositionsList = 1;
+}

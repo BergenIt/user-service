@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option csharp_namespace = "UserService.Proto";
+
+package UserService;
+
+message GetUserAccessObjectsRequest {
+    string UserId = 1;
+}
+
+message GetAccessObjectUsersRequest {
+    string AccessObjectId = 1;
+}

@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option csharp_namespace = "UserService.Proto";
+
+package UserService;
+
+import "DatabaseExtension.Proto/Filters/Filter.proto";
+
+message ContractProfileGetRequest {
+    string Id = 1;
+}
+
+message ContractProfilesGetRequest {
+    DatabaseExtension.Filter Filter = 1;
+}
+
+message NotifyTypeProppertyRequest
+{
+	string NotifyType = 1;
+}

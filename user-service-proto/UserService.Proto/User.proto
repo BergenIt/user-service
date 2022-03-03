@@ -1,0 +1,56 @@
+syntax = "proto3";
+
+option csharp_namespace = "UserService.Proto";
+
+package UserService;
+
+import "google/protobuf/wrappers.proto";
+import "google/protobuf/timestamp.proto";
+
+import "UserService.Proto/Role.proto";
+
+message UserPage {
+    repeated User UserList = 1;
+
+    int32 CountItems = 2;
+}
+
+message Users {
+    repeated User UserList = 1;
+}
+
+message User {
+    string Id = 1;
+    string UserName = 2;
+    string Email = 3;
+
+    google.protobuf.StringValue Description = 4;
+    google.protobuf.StringValue FullName = 5;
+
+    //Время последнего входа
+    google.protobuf.Timestamp LastLogin = 6;
+
+    //Время жизни пользователя
+	google.protobuf.Timestamp UserExpiration = 7;
+
+    //Время жизни пароля пользователя
+	google.protobuf.Timestamp PasswordExpiration = 8;
+
+    //Состояние пользователя 
+    string UserState = 9;
+
+    google.protobuf.StringValue PositionId = 10;
+
+    //Id структурного подразделения
+    string SubdivisionId = 11;
+
+    //Пользователь из ad 
+    bool IsLdapUser = 12;
+
+    repeated Role Roles = 13;
+
+    google.protobuf.StringValue RequestNumber = 14;
+}
+
+//Флаг используемый для определения действия с паролем в типе oneof
+message PasswordActionFlag {}

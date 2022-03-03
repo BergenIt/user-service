@@ -1,0 +1,78 @@
+syntax = "proto3";
+
+option csharp_namespace = "UserService.Proto";
+
+package UserService;
+
+import "google/protobuf/wrappers.proto";
+import "google/protobuf/timestamp.proto";
+
+import "UserService.Proto/User.proto";
+
+//Создание пользователя
+message UserCreateCommand {
+    string UserName = 1;
+    string Email = 2;
+
+    string SubdivisionId = 3;
+
+    google.protobuf.StringValue Description = 4;
+    google.protobuf.StringValue FullName = 5;
+
+	google.protobuf.Timestamp UserExpiration = 6;
+
+    repeated string RoleIds = 7;
+
+    google.protobuf.StringValue PositionId = 8;
+
+    // Генерация пароля и отправка на почту или ручной ввод
+    oneof UserPassword {
+        PasswordActionFlag AutogenerateToEmail = 9;
+        string Password = 10;
+    }
+
+    bool UserLock = 12;
+
+    string RequestNumber = 13;
+}
+
+message UserUpdateCommand {
+    // immutable field
+    string Id = 1;
+
+    string Email = 2;
+
+    string SubdivisionId = 3;
+
+    google.protobuf.StringValue Description = 4;
+    google.protobuf.StringValue FullName = 5;
+
+	google.protobuf.Timestamp UserExpiration = 6;
+
+    repeated string RoleIds = 7;
+
+    google.protobuf.StringValue PositionId = 8;
+
+    // Генерация пароля и отправка на почту, или ручной ввод, или отсутствие изменений по паролю
+    oneof UserPassword {
+        PasswordActionFlag AutogenerateToEmail = 9;
+        string Password = 10;
+        PasswordActionFlag WithoutChange = 11;
+    }
+
+    bool UserLock = 13;
+
+    string RequestNumber = 14;
+}
+
+message UsersRemoveCommand {
+    repeated string RemoveUsersId = 1;
+}
+
+message UsersCreateCommand {
+    repeated UserCreateCommand CreateUsersList = 1;
+}
+
+message UsersUpdateCommand {
+    repeated UserUpdateCommand UpdateUsersList = 1;
+}

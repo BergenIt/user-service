@@ -1,0 +1,22 @@
+version: '3.9'
+
+services:
+  user-service:
+    container_name: user-service
+    image: ${DOCKER_REGISTRY-}user-service
+    build:
+      target: release
+      context: ../.
+      dockerfile: UserService.Main/UserService.Main/Dockerfile    
+    env_file:
+      - env/service-setting.env
+      - env/elastic-connect.env
+      - env/ldap-connect.env
+      - env/psql-connect.env
+      - env/smtp-connect.env
+    restart: unless-stopped
+    ports:
+      - 616:443
+ #   volumes:
+ #     - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+ #     - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro

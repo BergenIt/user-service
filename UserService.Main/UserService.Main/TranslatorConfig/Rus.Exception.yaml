@@ -1,0 +1,15 @@
+AuditException:
+  ActiveDirectoryUserOperationLockException: Данная операция недоступна для пользователя, подключенного из ActiveDirectory
+  CaptchaCodeException: Ошибка ввода капчи
+  InvalidUserTokenException: Ошибка валидации токена пользователя
+  JtiUserException: Данному пользователю необходимо сменить пароль для продолжения пользования системой
+  PasswordInputException: Неправильно введенный пароль
+  PasswordInvalidChangeException: Ошибка при смене пароля
+  ServiceSettingValidateException: Введены невалидные настройки системы
+  SessionTimeoutException: Сессия истекла
+  UserLockException: Пользователь заблокирован
+  UserNotExistException: Пользователь не найден
+  ValidateNotificationSettingException: Введен невалидный шаблон уведомления
+  UserNotificationDeletePermissionException: Попытка удаления чужого уведомления
+  UserNotificationReadPermissionException: Попытка чтения чужого уведомления
+  UserNotFoundException: Попытка входа в несуществующий аккаунт

@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+option csharp_namespace = "UserService.Proto";
+
+package UserService;
+
+import "UserService.Proto/Role.proto";
+import "UserService.Proto/RoleService/RoleGetRequest.proto";
+import "UserService.Proto/RoleService/RoleCommand.proto";
+import "UserService.Proto/RoleService/RoleModel.proto";
+
+//Сервис работы с ролями
+service RoleService {
+    rpc GetRoleById (RoleGetRequest) returns (Role);
+    rpc GetRoles (RolesGetRequest) returns (RolePage);
+
+    rpc CreateRoles (RolesCreateCommand) returns (Roles);  
+    // Patch
+    rpc UpdateRoles (RolesUpdateCommand) returns (Roles);
+    // Delete
+    rpc RemoveRoles (RolesRemoveCommand) returns (Roles);
+
+    rpc GetAssertLevelRole (GetRoleLevelAccessRequest) returns (RoleLevelAccessList);
+    // Patch
+    rpc ChangeAssertLevelRole (ChangeRoleLevelAccessCommand) returns (RoleLevelAccessList);
+}
+

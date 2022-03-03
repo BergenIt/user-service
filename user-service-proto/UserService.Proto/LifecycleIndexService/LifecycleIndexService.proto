@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option csharp_namespace = "UserService.Proto";
+
+package UserService;
+
+import "UserService.Proto/LifecycleIndexService/LifecycleIndexModel.proto";
+import "UserService.Proto/LifecycleIndexService/LifecycleIndexRequest.proto";
+
+//Сервис работы с настройками политик жизненных цикло эластика
+service LifecycleIndexService {
+  rpc GetAuditLifecycleIndex (GetLifecycleIndexRequest) returns (LifecycleIndices);
+  rpc GetNotificationLifecycleIndex (GetLifecycleIndexRequest) returns (LifecycleIndices);
+  //Patch
+  rpc UpdateLifecycleIndex (LifecycleIndices) returns (LifecycleIndices);
+}

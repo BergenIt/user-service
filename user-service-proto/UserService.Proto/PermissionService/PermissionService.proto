@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+option csharp_namespace = "UserService.Proto";
+
+package UserService;
+
+import "UserService.Proto/Permission.proto";
+import "UserService.Proto/PermissionService/PermissionGetRequest.proto";
+import "UserService.Proto/PermissionService/PermissionCommand.proto";
+import "UserService.Proto/PermissionService/PermissionModels.proto";
+
+//Сервис работы с правами пользователей
+service PermissionService {
+
+    rpc GetSystemResources (GetSystemResourcesRequest) returns (Resources);
+
+    rpc GetPermissionPage (GetPermissionPageRequest) returns (PermissionPage);
+
+    rpc GetPermission (GetPermissionRequest) returns (Permission);
+
+    rpc GetRolePermissions (GetRolePermissionsRequest) returns (Permissions);
+
+    //Post
+    rpc CreatePermission (PermissionCreateCommand) returns (Permission);  
+    //Patch
+    rpc UpdatePermission (PermissionUpdateCommand) returns (Permission);  
+    //Patch
+    rpc ChangePermissionRoles (ChangePermissionRolesCommand) returns (Permission);
+    //Delete
+    rpc RemoveRolePermissions (PermissionsRemoveCommand) returns (Permissions);
+}

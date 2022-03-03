@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option csharp_namespace = "DatabaseExtension.Proto";
+
+package DatabaseExtension;
+
+import "google/protobuf/wrappers.proto";
+
+message SearchFilter {
+    google.protobuf.StringValue ColumnName = 1;
+    google.protobuf.StringValue Value = 2;
+}

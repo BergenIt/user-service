@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option csharp_namespace = "DatabaseExtension.Proto";
+
+package DatabaseExtension;
+
+import "DatabaseExtension.Proto/Filters/PaginationFilter.proto";
+import "DatabaseExtension.Proto/Filters/SearchFilter.proto";
+import "DatabaseExtension.Proto/Filters/SortFilter.proto";
+import "DatabaseExtension.Proto/Filters/TimeRangeFilter.proto";
+
+message Filter {
+    PaginationFilter PaginationFilter = 1;
+    repeated SearchFilter SearchFilter = 2;
+    repeated SortFilter SortFilter = 3;
+    repeated TimeRangeFilter TimeRangeFilter = 4;
+
+    //GroupFilter GroupFilter = 5;
+}
+

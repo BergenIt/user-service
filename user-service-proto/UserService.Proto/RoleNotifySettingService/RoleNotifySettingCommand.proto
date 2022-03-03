@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+option csharp_namespace = "UserService.Proto";
+
+package UserService;
+
+message RoleNotifySettingCreateCommand {
+	bool Enable = 1;
+	
+    string ContractProfileId = 2;
+
+	repeated string TargetNotifies = 3;
+
+	string SubdivisionId = 4;
+	string RoleId = 5;
+}
+
+message RoleNotifySettingUpdateCommand {
+    // immutable field
+    string Id = 1;
+    // immutable field
+
+	bool Enable = 2;
+	
+	repeated string TargetNotifies = 3;
+
+	string SubdivisionId = 4;
+	string RoleId = 5;
+}
+
+message RoleNotifySettingsRemoveCommand {
+    repeated string RemoveNotifySettingsId = 1;
+}
+
+message RoleNotifySettingsCreateCommand {
+    repeated RoleNotifySettingCreateCommand CreateNotifySettingsList = 1;
+}
+
+message RoleNotifySettingsUpdateCommand {
+    repeated RoleNotifySettingUpdateCommand UpdateNotifySettingsList = 1;
+}

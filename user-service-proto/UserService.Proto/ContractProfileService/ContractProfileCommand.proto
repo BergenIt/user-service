@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+option csharp_namespace = "UserService.Proto";
+
+package UserService;
+
+import "google/protobuf/wrappers.proto";
+
+import "UserService.Proto/ContractProfile.proto";
+
+message ContractProfileCreateCommand {
+	google.protobuf.StringValue Name = 1;
+	google.protobuf.StringValue Comment = 2;
+
+	string NotifyEventType = 3;
+
+	repeated ContractSettingLine ContractSettingLines = 4;
+}
+
+message ContractProfileUpdateCommand {
+    // immutable field
+    string Id = 1;
+    // immutable field
+
+	google.protobuf.StringValue Name = 2;
+	google.protobuf.StringValue Comment = 3;
+
+	string NotifyEventType = 4;
+
+	repeated ContractSettingLine ContractSettingLines = 5;
+}
+
+message ContractProfilesRemoveCommand {
+    repeated string RemoveContractProfilesId = 1;
+}
+
+message ContractProfilesCreateCommand {
+    repeated ContractProfileCreateCommand CreateContractProfilesList = 1;
+}
+
+message ContractProfilesUpdateCommand {
+    repeated ContractProfileUpdateCommand UpdateContractProfilesList = 1;
+}

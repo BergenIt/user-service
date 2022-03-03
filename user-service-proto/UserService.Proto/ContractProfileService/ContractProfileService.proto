@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+option csharp_namespace = "UserService.Proto";
+
+package UserService;
+
+import "UserService.Proto/ContractProfile.proto";
+import "UserService.Proto/ContractProfileService/ContractProfileRequest.proto";
+import "UserService.Proto/ContractProfileService/ContractProfileCommand.proto";
+import "UserService.Proto/ContractProfileService/ContractProfileModels.proto";
+
+//Сервис работы с профилем контракта уведомления
+service ContractProfileService {
+    rpc GetContractProfileById (ContractProfileGetRequest) returns (ContractProfile);
+    rpc GetContractProfiles (ContractProfilesGetRequest) returns (ContractProfilePage);
+    rpc CreateContractProfiles (ContractProfilesCreateCommand) returns (ContractProfiles);  
+    //Patch
+    rpc UpdateContractProfiles (ContractProfilesUpdateCommand) returns (ContractProfiles);
+    //Delete
+    rpc RemoveContractProfiles (ContractProfilesRemoveCommand) returns (ContractProfiles);
+
+    //Получить шаблон для создания профиля контракта
+    rpc GetContractProppertyTemplate(NotifyTypeProppertyRequest) returns (ContractProfileProppertyTemplate);
+}

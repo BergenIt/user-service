@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option csharp_namespace = "UserService.Proto";
+
+package UserService;
+
+import "UserService.Proto/Permission.proto";
+
+message Resources
+{
+    repeated Resource Resources = 1;
+}

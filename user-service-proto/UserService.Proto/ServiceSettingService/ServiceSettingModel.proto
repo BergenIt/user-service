@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option csharp_namespace = "UserService.Proto";
+
+package UserService;
+
+message ServiceSettings {
+    repeated ServiceSetting ServiceSettingList = 1;
+}
+
+message ServiceSetting {
+    string ServiceSettingAttribute = 1;
+    string ServiceSettingValue = 2;
+}

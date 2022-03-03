@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option csharp_namespace = "UserService.Proto";
+
+package UserService;
+
+service CaptchaService {
+  //Получить изображение капчи (ключ для валидации находится в хедере - 'CaptchaCode')
+  rpc GetCaptchaImage (GetCaptchaImageRequest) returns (CaptchaImage);
+}
+
+message GetCaptchaImageRequest{}
+
+message CaptchaImage {
+    bytes CaptchaImage = 1;
+    string ContentType = 2;
+}

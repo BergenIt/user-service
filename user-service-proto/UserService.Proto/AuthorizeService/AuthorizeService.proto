@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+option csharp_namespace = "UserService.Proto";
+
+package UserService;
+
+import "google/protobuf/empty.proto";
+
+import "UserService.Proto/AuthorizeService/Token.proto";
+import "UserService.Proto/AuthorizeService/LoginRequest.proto";
+
+//Сервис авторизации\аутентификации
+service AuthorizeService {
+  //Put
+  rpc Login (LoginRequest) returns (Token);
+
+  //Обновить токен (токен должен находиться в хедере)
+  //Put
+  rpc UpdateToken (google.protobuf.Empty) returns (Token);
+
+  //Put
+  rpc Logout (google.protobuf.Empty) returns (google.protobuf.Empty);
+}
+

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option csharp_namespace = "DatabaseExtension.Proto";
+
+package DatabaseExtension;
+
+import "google/protobuf/wrappers.proto";
+
+message PaginationFilter {
+    google.protobuf.Int32Value PageNumber = 1;
+    google.protobuf.Int32Value PageSize = 2;
+}
+

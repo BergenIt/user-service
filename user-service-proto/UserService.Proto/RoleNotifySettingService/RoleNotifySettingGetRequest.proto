@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option csharp_namespace = "UserService.Proto";
+
+package UserService;
+
+import "DatabaseExtension.Proto/Filters/Filter.proto";
+
+message RoleNotifySettingGetRequest {
+    string Id = 1;
+}
+
+message RoleNotifySettingsGetRequest {
+    string ContractProfileId = 1;
+
+    DatabaseExtension.Filter Filter = 2;
+}
